@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Todo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+  h2 {
+    color:blueviolet;
+    background-color:#76a9a9;
+  }
+ body {
+   background-color:darkolivegreen;
+   text-align:center;
+     background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+
+ }
+
+ p{
+   background-color:darkcyan;
+   text-decoration:capitalize;
+   padding: 15px;
+   font-weight:300;
+   font-size:20px;
+   
+ }
+
+ a{
+   background-color:#76a9a9;
+   color:indigo;
+   
+   font-size: 17px;
+   a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+:hover {
+  color: hotpink;
+}
+   
+   }
+ /* div {
+  background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+} */
+h1{
+  color:rgb(95, 134, 76);
+  text-transform: capitalize;
+  text-align:center;
+  
+}
+</style>
+  </head>
+  <body>
+  <h1>My Django ToDo App</h1>
+
+  <a href= {% url 'todo:list-todo'%} >Todo</a> |
+
+  <a href={% url 'todo:new-todo'%}>New task</a>
+    {% block content  %}    
+    
+    {% endblock content  %}
+    
+   
+  </body>
+
+
+</html>

@@ -1,0 +1,20 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div>
+<h2>Enter new task</h2>
+<form method = "post", action="">
+  {% csrf_token %}
+  {{ form.as_p}}
+  <!-- #this is the form in the context. -->
+  <button type="submit">Save Todo</button>
+ 
+</form>
+
+</div>
+
+{% endblock content %}
+

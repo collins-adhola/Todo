@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+<div> 
+<h2 >Things to do</h2>
+
+{% for todo in todos %}
+  <p >{{ todo.name }}</p>
+  <a text-align:center href="{% url 'todo:update-todo' todo.pk %}">Update</a>   |
+  <a href="{% url 'todo:delete-todo' todo.pk %}">Delete</a> <br>
+ 
+
+{% empty%}  
+  <p>There are no records to show</p>
+
+{% endfor %}  
+
+</div>
+
+{% endblock content %}
+
+
+<!-- '''This above means that : in models there exists a Todo model.  (2)I in views function you entered>>> def list_todo(request):
+todos = Todo.objects.all()
+return render(request, 'list_todo.html', context={"todos": todos})
+
+therefore you assigned the model elements to todos. by putting this in the context, it makes the model be accesed in the list_to.html
+''' -->
+
+
